@@ -1,17 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-
 <title>Little ABRM Bakes</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Little ABRM Bakes - Homemade mini desserts in Butwal Nepal. Cakes, donuts, tiramisu, cookies and sweet treats made with love.">
 
 <style>
-
-html{
-scroll-behavior:smooth;
-}
 
 body{margin:0;}
 
@@ -32,13 +27,12 @@ z-index:1000;
 .navbar a{
 text-decoration:none;
 font-family:"Comic Sans MS";
-font-size:20px;
+font-size:18px;
 color:#4b2e1f;
 font-weight:bold;
 }
 
 /* SECTION 1 */
-
 .header-hero{
 display:flex;
 flex-wrap:wrap;
@@ -69,14 +63,9 @@ color:#4b2e1f;
 }
 
 .image-area{width:50%;}
+.image-area img{width:100%;border-radius:20px;}
 
-.image-area img{
-width:100%;
-border-radius:20px;
-}
-
-/* ABOUT */
-
+/* SECTION 2 */
 .about-section{
 background-image:url("https://i.ibb.co/1tjb0N3h/background-jpg.jpg");
 background-size:cover;
@@ -107,8 +96,7 @@ font-size:33px;
 color:#4b2e1f;
 }
 
-/* MENU */
-
+/* SECTION 3 & 4 */
 .menu-section{
 padding:60px 20px;
 text-align:center;
@@ -182,6 +170,7 @@ color:#4b2e1f;
 }
 
 .price-item p{
+font-family:"Baskerville Old Face";
 font-size:24px;
 margin:6px 0;
 display:flex;
@@ -189,7 +178,7 @@ justify-content:space-between;
 color:#4b2e1f;
 }
 
-/* ORDER */
+/* ORDER FORM */
 
 .order-section{
 padding:60px 20px;
@@ -232,6 +221,7 @@ font-size:30px;
 padding:15px;
 border-radius:50%;
 text-decoration:none;
+box-shadow:0 4px 10px rgba(0,0,0,0.3);
 }
 
 /* CONTACT */
@@ -297,7 +287,6 @@ margin-top:20px;
 <body>
 
 <!-- NAVBAR -->
-
 <div class="navbar">
 <a href="#">Home</a>
 <a href="#menu">Menu</a>
@@ -306,8 +295,7 @@ margin-top:20px;
 <a href="#contact">Contact</a>
 </div>
 
-<!-- HERO -->
-
+<!-- SECTION 1 -->
 <div class="header-hero">
 
 <div class="text-area">
@@ -321,8 +309,7 @@ margin-top:20px;
 
 </div>
 
-<!-- ABOUT -->
-
+<!-- SECTION 2 -->
 <div class="about-section">
 
 <div class="about-overlay">
@@ -338,25 +325,16 @@ Little Abrm Bakes is a home-based bakery that offers fresh and delicious mini de
 </div>
 
 <!-- MENU -->
-
 <div class="menu-section" id="menu">
-
 <div class="menu-title">Take a Bite!</div>
-
 </div>
 
 <!-- PRICE -->
-
 <div class="price-section" id="price">
-
 <h2>Price List</h2>
-
-<p>See our full bakery menu above 🍩</p>
-
 </div>
 
 <!-- ORDER -->
-
 <div class="order-section" id="order">
 
 <h2>Order Now</h2>
@@ -370,12 +348,20 @@ Little Abrm Bakes is a home-based bakery that offers fresh and delicious mini de
 <select id="item">
 
 <option>Select Item</option>
-<option>Donuts</option>
-<option>Mouthwatering Cakes</option>
-<option>Cookies</option>
+<option>White Chocolate Donut</option>
+<option>Dark Chocolate Donut</option>
+<option>Strawberry Donut</option>
+<option>Red Velvet Donut</option>
+<option>Oreo White Chocolate Donut</option>
+<option>Chocolate Cake</option>
+<option>Red Velvet Cake</option>
+<option>Vanilla Cake</option>
+<option>Strawberry Cake</option>
+<option>Chocolate Chip Cookies</option>
+<option>Peanut Butter Cookies</option>
 <option>Cheesecake</option>
 <option>Strawberry Cheesecake</option>
-<option>Brownie with Ice-cream</option>
+<option>Brownie with Ice Cream</option>
 <option>Tiramisu</option>
 <option>Nutella Tiramisu</option>
 <option>Strawberry Tiramisu</option>
@@ -453,12 +439,11 @@ We'd love to hear from you!
 <div class="footer">
 
 🍰 soft brown · cream · pastel pink 🧁<br>
-
 #homemadewithlove #minitreats
 
 </div>
 
-<!-- WHATSAPP BUTTON -->
+<!-- WHATSAPP FLOAT -->
 
 <a href="https://wa.me/9779768281253" class="whatsapp-float">💬</a>
 
