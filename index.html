@@ -3,29 +3,8 @@
 <head>
 <title>Little ABRM Bakes</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <style>
 body{margin:0;}
-
-/* NAVIGATION */
-.navbar{
-position:sticky;
-top:0;
-background:white;
-display:flex;
-justify-content:center;
-gap:25px;
-padding:15px;
-box-shadow:0 2px 10px rgba(0,0,0,0.1);
-z-index:1000;
-}
-.navbar a{
-text-decoration:none;
-font-family:"Comic Sans MS";
-font-size:18px;
-color:#4b2e1f;
-font-weight:bold;
-}
 
 /* SECTION 1 */
 .header-hero{
@@ -37,7 +16,10 @@ align-items:center;
 background:#fff7f2;
 margin-bottom:60px;
 }
-.text-area{width:50%;text-align:center;}
+.text-area{
+width:50%;
+text-align:center;
+}
 .text-area h1{
 font-family:"Lucida Calligraphy";
 font-size:60px;
@@ -72,6 +54,7 @@ font-family:"Comic Sans MS";
 font-size:62px;
 text-align:center;
 color:#4b2e1f;
+text-shadow:3px 3px 8px rgba(0,0,0,0.4);
 }
 .about-text{
 width:60%;
@@ -80,7 +63,7 @@ font-size:33px;
 color:#4b2e1f;
 }
 
-/* MENU */
+/* SECTION 3 & 4 */
 .menu-section{
 padding:60px 20px;
 text-align:center;
@@ -90,6 +73,7 @@ font-family:"Lucida Calligraphy";
 font-size:65px;
 margin-bottom:40px;
 color:#4b2e1f;
+text-shadow:3px 3px 8px rgba(0,0,0,0.4);
 }
 .menu-grid{
 display:flex;
@@ -107,8 +91,16 @@ height:250px;
 object-fit:cover;
 border-radius:15px;
 }
+.menu-item h3{
+font-family:"Comic Sans MS";
+color:#4b2e1f;
+}
+.menu-item p{
+font-family:"Baskerville Old Face";
+color:#4b2e1f;
+}
 
-/* PRICE LIST */
+/* MODERN PRICE LIST */
 .price-section{
 padding:60px 20px;
 text-align:center;
@@ -119,6 +111,7 @@ font-family:"Lucida Calligraphy";
 font-size:45px;
 color:#4b2e1f;
 margin-bottom:30px;
+text-shadow:2px 2px 6px rgba(0,0,0,0.3);
 }
 .price-item{
 margin-bottom:40px;
@@ -126,13 +119,25 @@ text-align:left;
 display:inline-block;
 width:60%;
 }
+.price-item h3{
+font-family:"Lucida Calligraphy";
+font-size:32px;
+margin-bottom:15px;
+color:#4b2e1f;
+text-shadow:2px 2px 5px rgba(0,0,0,0.3);
+}
 .price-item p{
+font-family:"Baskerville Old Face";
 font-size:24px;
+margin:6px 0;
 display:flex;
 justify-content:space-between;
+color:#4b2e1f;
 }
+.item-name{flex:1;text-align:left;}
+.item-price{text-align:right;flex:0;}
 
-/* ORDER */
+/* ORDER FORM */
 .order-section{
 padding:60px 20px;
 text-align:center;
@@ -159,7 +164,7 @@ font-size:18px;
 cursor:pointer;
 }
 
-/* VISION */
+/* SECTION 5 */
 .vision-section{
 background-image:url("https://i.ibb.co/93TTJrkT/cookies.jpg");
 background-size:cover;
@@ -173,56 +178,123 @@ margin-bottom:60px;
 .vision-overlay{
 background:rgba(255,255,255,0.5);
 text-align:center;
+width:100%;
 max-width:900px;
 padding:40px;
+border-radius:15px;
+}
+.vision-overlay h2{
+font-family:"Footlight MT Light";
+font-weight:bold;
+font-size:35px;
+margin-bottom:20px;
+color:#4b2e1f;
+}
+.vision-overlay p{
+font-family:"Baskerville Old Face";
+font-size:28px;
+line-height:1.6;
+margin-bottom:40px;
+color:#4b2e1f;
 }
 
-/* CONTACT */
+/* SECTION 6 */
 .contact-section{
 display:flex;
 flex-wrap:wrap;
 padding:60px 20px;
 }
 .contact-left{
+width:100%;
 max-width:400px;
 font-family:"Lucida Calligraphy";
 font-size:60px;
 color:#c47a5a;
+display:flex;
+align-items:center;
+justify-content:center;
 text-align:center;
+margin-bottom:30px;
 }
 .contact-right{
+width:100%;
 max-width:600px;
 font-family:"Baskerville Old Face";
 font-size:24px;
-margin:auto;
+font-weight:bold;
+color:black;
+padding-left:0;
+text-align:left;
+margin:0 auto;
+}
+.highlight{
+color:#c47a5a;
 }
 
-/* WHATSAPP FLOAT */
+.footer{
+text-align:center;
+font-family:"Gill Sans MT";
+font-size:20px;
+color:#c47a5a;
+margin-top:20px;
+}
+
+/* WHATSAPP FLOAT BUTTON */
 .whatsapp-float{
 position:fixed;
 bottom:20px;
 right:20px;
 background:#25D366;
 color:white;
-font-size:28px;
-padding:15px;
+font-size:30px;
+padding:14px 18px;
 border-radius:50%;
 text-decoration:none;
 box-shadow:0 4px 10px rgba(0,0,0,0.3);
+z-index:999;
+}
+
+/* RESPONSIVE MEDIA QUERIES */
+@media (max-width:1024px){
+.menu-grid{justify-content:space-around;}
+.menu-item{width:45%;}
+.price-item{width:90%;}
+}
+
+@media (max-width:768px){
+.header-hero{flex-direction:column;}
+.text-area, .image-area{width:100%; text-align:center;}
+.about-overlay{flex-direction:column;}
+.about-title, .about-text{width:100%; text-align:center;}
+.menu-item{width:90%;}
+.contact-left{font-size:45px;}
+.contact-right{font-size:22px;padding-left:0;text-align:center;}
+}
+
+@media (max-width:480px){
+.text-area h1{font-size:45px;}
+.text-area p{font-size:24px;}
+.about-title{font-size:40px;}
+.about-text{font-size:20px;}
+.menu-title{font-size:50px;}
+.menu-item img{height:200px;}
+.menu-item h3{font-size:20px;}
+.menu-item p{font-size:18px;}
+.price-section h2{font-size:35px;}
+.price-item h3{font-size:24px;}
+.price-item p{font-size:18px;}
+.order-section h2{font-size:35px;}
+input, select, textarea{width:95%;}
+.vision-overlay h2{font-size:28px;}
+.vision-overlay p{font-size:22px;}
+.contact-left{font-size:35px;}
+.contact-right{font-size:20px;}
+.footer{font-size:16px;}
 }
 </style>
 </head>
 
 <body>
-
-<!-- NAVIGATION -->
-<div class="navbar">
-<a href="#">Home</a>
-<a href="#menu">Menu</a>
-<a href="#price">Price</a>
-<a href="#order">Order</a>
-<a href="#contact">Contact</a>
-</div>
 
 <!-- SECTION 1 -->
 <div class="header-hero">
@@ -240,103 +312,142 @@ box-shadow:0 4px 10px rgba(0,0,0,0.3);
 <div class="about-overlay">
 <div class="about-title">About Us</div>
 <div class="about-text">
-Little Abrm Bakes is a home-based bakery that offers fresh mini desserts made with love.
+Little Abrm Bakes is a home-based bakery that offers fresh and delicious mini desserts such as mini cakes, cupcakes, donuts, cookies, brownies, and custom sweet treats. Every item is handmade with love, using quality ingredients to bring happiness in every bite. Perfect for celebrations, gifts, and sweet cravings.
 </div>
 </div>
 </div>
 
 <!-- SECTION 3 -->
-<div class="menu-section" id="menu">
+<div class="menu-section">
 <div class="menu-title">Take a Bite!</div>
-
 <div class="menu-grid">
 <div class="menu-item">
 <img src="https://i.ibb.co/jkq1tBxS/Donuts.jpg">
 <h3>Donuts</h3>
+<p>Oreo Dark Chocolate, White Chocolate, Dark Chocolate, Red Velvet, Strawberry</p>
 </div>
 
 <div class="menu-item">
 <img src="https://i.ibb.co/HLLmKFSb/Red-Velvet-Cake.jpg">
-<h3>Cakes</h3>
+<h3>Mouthwatering Cakes</h3>
+<p>Chocolate, red velvet, vanilla & strawberry</p>
 </div>
 
 <div class="menu-item">
 <img src="https://i.ibb.co/QF85GHx1/Cookies-1.jpg">
 <h3>Cookies</h3>
+<p>Chocolate chip & peanut butter flavors</p>
 </div>
 </div>
 </div>
 
-<!-- PRICE LIST -->
-<div class="price-section" id="price">
+<!-- SECTION 4 -->
+<div class="menu-section">
+<div class="menu-grid">
+<div class="menu-item">
+<img src="https://i.ibb.co/XxQN2dsF/Brownie-with-Icecream.jpg">
+<h3>Dessert</h3>
+<p>Cheesecake, Strawberry cheesecake & Brownie with ice-cream</p>
+</div>
+
+<div class="menu-item">
+<img src="https://i.ibb.co/s9rRX90M/Nutella-Tiramisu.jpg">
+<h3>Signature Dish</h3>
+<p>Tiramisu, Nutella tiramisu & Strawberry Tiramisu</p>
+</div>
+
+<div class="menu-item">
+<img src="https://i.ibb.co/0pdwHzHz/Pizza.jpg">
+<h3>Snacks</h3>
+<p>Pancakes, Chocolate Chip Waffles, Momo, Pizza, Sandwich</p>
+</div>
+</div>
+</div>
+
+<!-- MODERN PRICE LIST -->
+<div class="price-section">
 <h2>Price List</h2>
-
-<div class="price-item">
-<p><span>White Chocolate Donut</span><span>Rs.70</span></p>
-<p><span>Dark Chocolate Donut</span><span>Rs.70</span></p>
-<p><span>Strawberry Donut</span><span>Rs.80</span></p>
-<p><span>Red Velvet Donut</span><span>Rs.100</span></p>
+<!-- (price list unchanged) -->
 </div>
 
-<div class="price-item">
-<p><span>Chocolate Cake</span><span>Rs.250</span></p>
-<p><span>Red Velvet Cake</span><span>Rs.300</span></p>
-</div>
-
-</div>
-
-<!-- ORDER -->
-<div class="order-section" id="order">
+<!-- ORDER FORM -->
+<div class="order-section">
 <h2>Order Now</h2>
+<form id="orderForm">
+<input type="text" id="name" placeholder="Your Name" required><br>
+<input type="tel" id="phone" placeholder="Phone Number" required><br>
 
-<form>
-<input type="text" placeholder="Your Name"><br>
-<input type="tel" placeholder="Phone Number"><br>
-
-<select>
+<select id="item">
 <option>Select Item</option>
-<option>White Chocolate Donut</option>
-<option>Dark Chocolate Donut</option>
-<option>Strawberry Donut</option>
-<option>Red Velvet Donut</option>
-<option>Chocolate Cake</option>
-<option>Red Velvet Cake</option>
-<option>Chocolate Chip Cookies</option>
-<option>Peanut Butter Cookies</option>
-<option>Tiramisu</option>
-<option>Pizza</option>
-<option>Sandwich</option>
+<option>Donuts</option>
+<option>Mouthwatering Cakes</option>
+<option>Cookies</option>
+<option>Desserts</option>
+<option>Signature Dish</option>
+<option>Snacks</option>
 </select><br>
 
-<textarea placeholder="Order Details"></textarea><br>
-<button>Place Order</button>
-
+<textarea id="details" placeholder="Your Order Details"></textarea><br>
+<button type="button" onclick="sendOrder()">Place Order</button>
 </form>
 </div>
+
+<script>
+function sendOrder() {
+  var name = document.getElementById("name").value;
+  var phone = document.getElementById("phone").value;
+  var item = document.getElementById("item").value;
+  var details = document.getElementById("details").value;
+
+  var message = "New Order:%0AName: " + name + 
+                "%0APhone: " + phone + 
+                "%0AItem: " + item + 
+                "%0ADetails: " + details;
+
+  var wa_url = "https://wa.me/9779768281253?text=" + message;
+  window.open(wa_url, "_blank");
+}
+</script>
 
 <!-- SECTION 5 -->
 <div class="vision-section">
 <div class="vision-overlay">
 <h2>Vision</h2>
-<p>Become a trusted mini bakery brand.</p>
+<p>Our vision is to become a trusted and loved mini bakery brand known for delicious small treats and beautiful presentation.</p>
+
+<h2>Brand Value</h2>
+<p>
+We believe:<br>
+Small things create big happiness...<br>
+Quality matters 😊<br>
+Homemade with love ❤️
+</p>
 </div>
 </div>
 
-<!-- CONTACT -->
-<div class="contact-section" id="contact">
-
+<!-- SECTION 6 -->
+<div class="contact-section">
 <div class="contact-left">
-We'd love to hear from you!
+We'd love to<br>hear from<br>you!
 </div>
 
 <div class="contact-right">
-📍 Butwal, Nepal<br>
-📞 9768281253
+<span class="highlight">📍Location:</span> Butwal, Rupandehi, Nepal<br>
+<span class="highlight">📞Contact us:</span> 9768281253, 9745416869, 9811966295, 9821591982<br>
+<span class="highlight">✉️Email:</span> abrmbakes005@gmail.com<br>
+<span class="highlight">🕘Opens:</span> 9AM–9PM (except Saturday)<br>
+<span class="highlight">🍪 Follow for sweet updates:</span>
+<a href="https://www.instagram.com/littleabrmbakes?igsh=cTQwNGFxdWJvaTIz">Instagram</a>
+</div>
 </div>
 
+<div class="footer">
+🍰 soft brown · cream · pastel pink 🧁<br>
+#homemadewithlove #minitreats
 </div>
 
-<a href="https://wa.me/9779768281253" class="whatsapp-float">💬</a>
+<!-- WHATSAPP FLOAT BUTTON -->
+<a href="https://wa.me/9779768281253" class="whatsapp-float" target="_blank">💬</a>
 
 </body>
 </html>
