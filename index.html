@@ -1,599 +1,82 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Little ABRM Bakes</title>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<title>Little ABRM Bakes</title>
 <style>
-body{margin:0;}
-<!-- NAVIGATION -->
-<div class="navbar">
-
-<div class="hamburger" onclick="toggleMenu()">☰</div>
-
-<div class="nav-links" id="navLinks">
-<a href="#home">Home</a>
-<a href="#about">About</a>
-<a href="#menu">Menu</a>
-<a href="#price">Price</a>
-<a href="#order">Order</a>
-<a href="#contact">Contact</a>
-</div>
-
-</div>
-
-/* NAVBAR */
-.navbar{
-background:white;
-padding:15px;
-text-align:center;
-position:sticky;
-top:0;
-z-index:1000;
-box-shadow:0 2px 6px rgba(0,0,0,0.1);
+* {margin:0;padding:0;box-sizing:border-box;font-family:'Arial',sans-serif;}
+body {background-color:#fff7f2;color:#333;}
+.header-hero {display:flex;flex-wrap:wrap;align-items:center;justify-content:center;padding:50px;text-align:center;}
+.header-hero img {max-width:300px;width:100%;height:auto;margin:20px 0;}
+.text-area h1 {font-family:'TAN Mon Cheri',cursive;font-size:52px;margin-bottom:15px;}
+.text-area p {font-family:'Sigher',cursive;font-size:20px;color:#d2691e;}
+.about {padding:50px;max-width:1000px;margin:auto;text-align:center;}
+.about h2 {font-size:32px;margin-bottom:20px;}
+.about p {font-size:18px;line-height:1.6;color:#555;}
+.products {padding:50px;background-color:#fff1e6;text-align:center;}
+.products h2 {font-size:32px;margin-bottom:30px;}
+.product-grid {display:flex;flex-wrap:wrap;justify-content:center;gap:20px;}
+.product-card {background-color:#fff;padding:20px;border-radius:15px;box-shadow:0 4px 10px rgba(0,0,0,0.1);width:250px;transition:transform 0.2s;}
+.product-card:hover {transform:scale(1.05);}
+.product-card img {width:100%;border-radius:10px;}
+.product-card h3 {margin:15px 0 10px 0;font-size:20px;}
+.product-card p {font-size:16px;color:#666;}
+.contact {padding:50px;text-align:center;}
+.contact h2 {font-size:32px;margin-bottom:20px;}
+.contact a {display:block;color:#d2691e;font-size:18px;margin:10px 0;text-decoration:none;}
+@media (max-width:768px) {
+.header-hero {flex-direction:column;padding:30px;}
+.text-area h1 {font-size:40px;}
+.text-area p {font-size:18px;}
+.about h2,.products h2,.contact h2 {font-size:28px;}
+.about p,.product-card p {font-size:16px;}
+.product-card {width:80%;}
 }
-.navbar a{
-margin:0 15px;
-text-decoration:none;
-font-family:"Comic Sans MS";
-color:#4b2e1f;
-font-size:18px;
-font-weight:bold;
+@media (max-width:480px) {
+.text-area h1 {font-size:32px;}
+.text-area p {font-size:16px;}
+.about h2,.products h2,.contact h2 {font-size:24px;}
+.about p,.product-card p {font-size:14px;}
 }
-
-
-/* INSTAGRAM FLOAT BUTTON */
-.instagram-float{
-position:fixed;
-bottom:90px;
-right:20px;
-background:#E4405F;
-color:white;
-font-size:26px;
-width:60px;
-height:60px;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-text-decoration:none;
-box-shadow:0 4px 8px rgba(0,0,0,0.3);
-z-index:1000;
-}
-
-/* WHATSAPP FLOAT */
-.whatsapp-float{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25D366;
-color:white;
-font-size:28px;
-width:60px;
-height:60px;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-text-decoration:none;
-box-shadow:0 4px 8px rgba(0,0,0,0.3);
-z-index:1000;
-}
-
-/* SECTION 1 */
-.header-hero{
-display:flex;
-flex-wrap:wrap;
-height:auto;
-padding:50px;
-align-items:center;
-background:#fff7f2;
-margin-bottom:60px;
-}
-.text-area{
-width:50%;
-text-align:center;
-}
-.text-area h1{
-font-family:"Lucida Calligraphy";
-font-size:60px;
-font-weight:bold;
-color:#4b2e1f;
-text-shadow:3px 3px 8px rgba(0,0,0,0.4);
-}
-.text-area p{
-font-family:"Comic Sans MS";
-font-size:30px;
-color:#4b2e1f;
-}
-.image-area{width:50%;}
-.image-area img{width:100%;border-radius:20px;}
-
-/* SECTION 2 */
-.about-section{
-background-image:url("https://i.ibb.co/1tjb0N3h/background-jpg.jpg");
-background-size:cover;
-padding:80px;
-}
-.about-overlay{
-background:rgba(255,255,255,0.66);
-display:flex;
-flex-wrap:wrap;
-align-items:center;
-padding:40px;
-}
-.about-title{
-width:40%;
-font-family:"Comic Sans MS";
-font-size:62px;
-text-align:center;
-color:#4b2e1f;
-text-shadow:3px 3px 8px rgba(0,0,0,0.4);
-}
-.about-text{
-width:60%;
-font-family:"Footlight MT Light";
-font-size:33px;
-color:#4b2e1f;
-}
-
-/* SECTION 3 & 4 */
-.menu-section{
-padding:60px 20px;
-text-align:center;
-}
-.menu-title{
-font-family:"Lucida Calligraphy";
-font-size:65px;
-margin-bottom:40px;
-color:#4b2e1f;
-text-shadow:3px 3px 8px rgba(0,0,0,0.4);
-}
-.menu-grid{
-display:flex;
-justify-content:center;
-gap:40px;
-flex-wrap:wrap;
-}
-.menu-item{
-width:250px;
-margin-bottom:30px;
-}
-.menu-item img{
-width:100%;
-height:250px;
-object-fit:cover;
-border-radius:15px;
-}
-.menu-item h3{
-font-family:"Comic Sans MS";
-color:#4b2e1f;
-}
-.menu-item p{
-font-family:"Baskerville Old Face";
-color:#4b2e1f;
-}
-
-/* MODERN PRICE LIST */
-.price-section{
-padding:60px 20px;
-text-align:center;
-font-family:"Baskerville Old Face";
-}
-.price-section h2{
-font-family:"Lucida Calligraphy";
-font-size:45px;
-color:#4b2e1f;
-margin-bottom:30px;
-text-shadow:2px 2px 6px rgba(0,0,0,0.3);
-}
-.price-item{
-margin-bottom:40px;
-text-align:left;
-display:inline-block;
-width:60%;
-}
-.price-item h3{
-font-family:"Lucida Calligraphy";
-font-size:32px;
-margin-bottom:15px;
-color:#4b2e1f;
-text-shadow:2px 2px 5px rgba(0,0,0,0.3);
-}
-.price-item p{
-font-family:"Baskerville Old Face";
-font-size:24px;
-margin:6px 0;
-display:flex;
-justify-content:space-between;
-color:#4b2e1f;
-}
-.item-name{flex:1;text-align:left;}
-.item-price{text-align:right;flex:0;}
-
-/* ORDER FORM */
-.order-section{
-padding:60px 20px;
-text-align:center;
-}
-.order-section h2{
-font-family:"Lucida Calligraphy";
-font-size:45px;
-color:#4b2e1f;
-}
-input, select, textarea{
-width:90%;
-max-width:300px;
-padding:10px;
-border-radius:8px;
-margin:5px;
-}
-button{
-padding:12px 25px;
-background:#c47a5a;
-color:white;
-border:none;
-border-radius:10px;
-font-size:18px;
-cursor:pointer;
-}
-
-/* SECTION 5 */
-.vision-section{
-background-image:url("https://i.ibb.co/93TTJrkT/cookies.jpg");
-background-size:cover;
-background-position:center;
-display:flex;
-align-items:center;
-justify-content:center;
-padding:60px 20px;
-margin-bottom:60px;
-}
-.vision-overlay{
-background:rgba(255,255,255,0.5);
-text-align:center;
-width:100%;
-max-width:900px;
-padding:40px;
-border-radius:15px;
-}
-.vision-overlay h2{
-font-family:"Footlight MT Light";
-font-weight:bold;
-font-size:35px;
-margin-bottom:20px;
-color:#4b2e1f;
-}
-.vision-overlay p{
-font-family:"Baskerville Old Face";
-font-size:28px;
-line-height:1.6;
-margin-bottom:40px;
-color:#4b2e1f;
-}
-
-/* SECTION 6 */
-.contact-section{
-display:flex;
-flex-wrap:wrap;
-padding:60px 20px;
-}
-.contact-left{
-width:100%;
-max-width:400px;
-font-family:"Lucida Calligraphy";
-font-size:60px;
-color:#c47a5a;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-margin-bottom:30px;
-}
-.contact-right{
-width:100%;
-max-width:600px;
-font-family:"Baskerville Old Face";
-font-size:24px;
-font-weight:bold;
-color:black;
-padding-left:0;
-text-align:left;
-margin:0 auto;
-}
-.highlight{
-color:#c47a5a;
-}
-
-.footer{
-text-align:center;
-font-family:"Gill Sans MT";
-font-size:20px;
-color:#c47a5a;
-margin-top:20px;
-}
-  /* NAVIGATION */
-
-.navbar{
-background:#f8e6df;
-display:flex;
-justify-content:center;
-align-items:center;
-padding:10px;
-position:sticky;
-top:0;
-z-index:1000;
-}
-
-.nav-links a{
-margin:10px 15px;
-text-decoration:none;
-font-family:"Comic Sans MS";
-font-weight:bold;
-color:#4b2e1f;
-}
-
-.hamburger{
-display:none;
-font-size:28px;
-cursor:pointer;
-position:absolute;
-right:20px;
-}
-
-/* MOBILE MENU */
-
-@media (max-width:768px){
-
-.nav-links{
-display:none;
-flex-direction:column;
-width:100%;
-text-align:center;
-background:#f8e6df;
-}
-
-.nav-links a{
-display:block;
-padding:12px;
-border-top:1px solid #ddd;
-}
-
-.hamburger{
-display:block;
-}
-
-}
-
 </style>
 </head>
-<script>
-
-function toggleMenu(){
-var menu = document.getElementById("navLinks");
-
-if(menu.style.display === "flex"){
-menu.style.display = "none";
-}else{
-menu.style.display = "flex";
-}
-
-}
-
-</script>
-
 <body>
-
-<!-- NAVBAR -->
-<div class="navbar">
-<a href="#">Home</a>
-<a href="#about">About</a>
-<a href="#menu">Menu</a>
-<a href="#price">Price</a>
-<a href="#order">Order</a>
-<a href="#contact">Contact</a>
-</div>
-
-<!-- SECTION 1 -->
-<div class="header-hero" id="home">
+<section class="header-hero">
 <div class="text-area">
 <h1>Little ABRM Bakes</h1>
 <p>Tiny Bites, Big Happiness ✨</p>
 </div>
-<div class="image-area">
-<img src="https://i.ibb.co/MxWt8ZK3/bake-jpg.jpg">
+<img src="cupcake.png" alt="Cupcake Image">
+</section>
+<section class="about">
+<h2>About Us</h2>
+<p>Welcome to Little ABRM Bakes! We specialize in homemade mini desserts that are fresh, soft, and made with love. From cupcakes to mini cakes, our treats are perfect for celebrations, gifts, or simply satisfying your sweet cravings.</p>
+</section>
+<section class="products">
+<h2>Our Products</h2>
+<div class="product-grid">
+<div class="product-card">
+<img src="product1.png" alt="Cupcake">
+<h3>Cupcake</h3>
+<p>Freshly baked cupcakes with love.</p>
+</div>
+<div class="product-card">
+<img src="product2.png" alt="Mini Cake">
+<h3>Mini Cake</h3>
+<p>Soft and delicious mini cakes for any occasion.</p>
+</div>
+<div class="product-card">
+<img src="product3.png" alt="Cookie">
+<h3>Cookie</h3>
+<p>Homemade cookies perfect for gifting.</p>
 </div>
 </div>
-
-<!-- SECTION 2 -->
-<div class="about-section" id="about">
-<div class="about-overlay">
-<div class="about-title">About Us</div>
-<div class="about-text">
-Little Abrm Bakes is a home-based bakery that offers fresh and delicious mini desserts such as mini cakes, cupcakes, donuts, cookies, brownies, and custom sweet treats. Every item is handmade with love, using quality ingredients to bring happiness in every bite. Perfect for celebrations, gifts, and sweet cravings.
-</div>
-</div>
-</div>
-
-<!-- SECTION 3 -->
-<div class="menu-section" id="menu">
-<div class="menu-title">Take a Bite!</div>
-<div class="menu-grid">
-<div class="menu-item">
-<img src="https://i.ibb.co/jkq1tBxS/Donuts.jpg">
-<h3>Donuts</h3>
-<p>Oreo Dark Chocolate, White Chocolate, Dark Chocolate, Red Velvet, Strawberry</p>
-</div>
-
-<div class="menu-item">
-<img src="https://i.ibb.co/HLLmKFSb/Red-Velvet-Cake.jpg">
-<h3>Mouthwatering Cakes</h3>
-<p>Chocolate, red velvet, vanilla & strawberry</p>
-</div>
-
-<div class="menu-item">
-<img src="https://i.ibb.co/QF85GHx1/Cookies-1.jpg">
-<h3>Cookies</h3>
-<p>Chocolate chip & peanut butter flavors</p>
-</div>
-</div>
-</div>
-
-<!-- SECTION 4 -->
-<div class="menu-section"id="menu">
-<div class="menu-grid">
-<div class="menu-item">
-<img src="https://i.ibb.co/XxQN2dsF/Brownie-with-Icecream.jpg">
-<h3>Dessert</h3>
-<p>Cheesecake, Strawberry cheesecake & Brownie with ice-cream</p>
-</div>
-
-<div class="menu-item">
-<img src="https://i.ibb.co/s9rRX90M/Nutella-Tiramisu.jpg">
-<h3>Signature Dish</h3>
-<p>Tiramisu, Nutella tiramisu & Strawberry Tiramisu</p>
-</div>
-
-<div class="menu-item">
-<img src="https://i.ibb.co/0pdwHzHz/Pizza.jpg">
-<h3>Snacks</h3>
-<p>Pancakes, Chocolate Chip Waffles, Momo, Pizza, Sandwich</p>
-</div>
-</div>
-</div>
-
-<!-- PRICE LIST -->
-<div class="price-section" id="price">
-<h2>Price List</h2>
-
-<div class="price-item">
-<h3>A. Donuts</h3>
-<p><span class="item-name">White Chocolate</span><span class="item-price">Rs.70</span></p>
-<p><span class="item-name">Dark Chocolate</span><span class="item-price">Rs.70</span></p>
-<p><span class="item-name">Strawberry</span><span class="item-price">Rs.80</span></p>
-<p><span class="item-name">Red Velvet</span><span class="item-price">Rs.100</span></p>
-<p><span class="item-name">Oreo White Chocolate</span><span class="item-price">Rs.120</span></p>
-</div>
-
-<div class="price-item">
-<h3>B. Mouthwatering Cakes</h3>
-<p><span class="item-name">Chocolate</span><span class="item-price">Rs.250</span></p>
-<p><span class="item-name">Red Velvet</span><span class="item-price">Rs.300</span></p>
-<p><span class="item-name">Vanilla</span><span class="item-price">Rs.200</span></p>
-<p><span class="item-name">Strawberry</span><span class="item-price">Rs.250</span></p>
-</div>
-
-<div class="price-item">
-<h3>C. Cookies</h3>
-<p><span class="item-name">Chocolate Chips</span><span class="item-price">Rs.70</span></p>
-<p><span class="item-name">Peanut Butter Flavor</span><span class="item-price">Rs.70</span></p>
-</div>
-
-<div class="price-item">
-<h3>D. Dessert</h3>
-<p><span class="item-name">Cheesecake</span><span class="item-price">Rs.250</span></p>
-<p><span class="item-name">Strawberry Cheesecake</span><span class="item-price">Rs.250</span></p>
-<p><span class="item-name">Brownie with Ice-cream</span><span class="item-price">Rs.150</span></p>
-</div>
-
-<div class="price-item">
-<h3>E. Signature Dish</h3>
-<p><span class="item-name">Tiramisu</span><span class="item-price">Rs.350</span></p>
-<p><span class="item-name">Nutella Tiramisu</span><span class="item-price">Rs.350</span></p>
-<p><span class="item-name">Strawberry Tiramisu</span><span class="item-price">Rs.350</span></p>
-</div>
-
-<div class="price-item">
-<h3>F. Snacks</h3>
-<p><span class="item-name">Pancakes</span><span class="item-price">Rs.250</span></p>
-<p><span class="item-name">Chocolate Chip Waffles</span><span class="item-price">Rs.250</span></p>
-<p><span class="item-name">Momo</span><span class="item-price">Rs.160</span></p>
-<p><span class="item-name">Pizza</span><span class="item-price"> Rs.470</span></p>
-<p><span class="item-name">Sandwich</span><span class="item-price">Rs.125</span></p>
-</div>
-</div>
-
-<!-- ORDER -->
-<div class="order-section" id="order">
-<h2>Order Now</h2>
-<form id="orderForm">
-<input type="text" id="name" placeholder="Your Name" required><br>
-<input type="tel" id="phone" placeholder="Phone Number" required><br>
-
-<select id="item">
-<option>Select Item</option>
-<option>Donuts</option>
-<option>Mouthwatering Cakes</option>
-<option>Cookies</option>
-<option>Desserts</option>
-<option>Signature Dish</option>
-<option>Snacks</option>
-</select>
-
-<br>
-<textarea id="details" placeholder="Your Order Details"></textarea><br>
-<button type="button" onclick="sendOrder()">Place Order</button>
-</form>
-</div>
-
-<script>
-function sendOrder() {
-var name=document.getElementById("name").value;
-var phone=document.getElementById("phone").value;
-var item=document.getElementById("item").value;
-var details=document.getElementById("details").value;
-
-var message="New Order:%0AName: "+name+
-"%0APhone: "+phone+
-"%0AItem: "+item+
-"%0ADetails: "+details;
-
-var wa_url="https://wa.me/9779768281253?text="+message;
-window.open(wa_url,"_blank");
-}
-</script>
-
-<!-- SECTION 5 -->
-<div class="vision-section">
-<div class="vision-overlay">
-<h2>Vision</h2>
-<p>Our vision is to become a trusted and loved mini bakery brand known for delicious small treats and beautiful presentation.</p>
-
-<h2>Brand Value</h2>
-<p>
-We believe:<br>
-Small things create big happiness...<br>
-Quality matters 😊<br>
-Homemade with love ❤️
-</p>
-</div>
-</div>
-
-<!-- SECTION 6 -->
-<div class="contact-section" id="contact">
-<div class="contact-left">
-We'd love to<br>hear from<br>you!
-</div>
-
-<div class="contact-right">
-<span class="highlight">📍Location:</span> Butwal, Rupandehi, Nepal<br>
-<span class="highlight">📞Contact us:</span> 9768281253, 9745416869, 9811966295, 9821591982<br>
-<span class="highlight">✉️Email:</span> abrmbakes005@gmail.com<br>
-<span class="highlight">🕘Opens:</span> 9AM–9PM (except Saturday)<br>
-<span class="highlight">🍪 Follow for sweet updates:</span>
-<a href="https://www.instagram.com/littleabrmbakes?igsh=cTQwNGFxdWJvaTIz" target="_blank">Instagram</a> |
-<a href="https://www.facebook.com/profile.php?id=61586967240461&mibextid=wwXIfr&rdid=IscaOtB3yihoobyA&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1A93okaDHq%2F%3Fmibextid%3DwwXIfr#" target="_blank">Facebook</a>
-
-</div>
-</div>
-
-<div class="footer">
-🍰 soft brown · cream · pastel pink 🧁<br>
-#homemadewithlove #minitreats
-</div>
-
-<a href="https://www.instagram.com/littleabrmbakes" class="instagram-float" target="_blank">📸</a>
-<a href="https://wa.me/9779768281253" class="whatsapp-float">💬</a>
-
+</section>
+<section class="contact">
+<h2>Contact Us</h2>
+<a href="mailto:littlebakery0052@gmail.com">Email: littlebakery0052@gmail.com</a>
+<a href="tel:+977-9800000000">Phone: +977-9800000000</a>
+</section>
 </body>
 </html>
