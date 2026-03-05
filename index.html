@@ -1,18 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<title>Little ABRM Bakes</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ABRM Bakery</title>
-
 
 <style>
-img {
-  max-width: 100%;
-  height: auto;
-}
-
 body{margin:0;}
+<!-- NAVIGATION -->
+<div class="navbar">
+
+<div class="hamburger" onclick="toggleMenu()">☰</div>
+
+<div class="nav-links" id="navLinks">
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#menu">Menu</a>
+<a href="#price">Price</a>
+<a href="#order">Order</a>
+<a href="#contact">Contact</a>
+</div>
+
+</div>
 
 /* NAVBAR */
 .navbar{
@@ -24,21 +32,10 @@ top:0;
 z-index:1000;
 box-shadow:0 2px 6px rgba(0,0,0,0.1);
 }
-nav {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-nav {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-nav a {
-  margin: 8px;
-  text-decoration: none;
-  font-family:"Comic Sans MS";
+.navbar a{
+margin:0 15px;
+text-decoration:none;
+font-family:"Comic Sans MS";
 color:#4b2e1f;
 font-size:18px;
 font-weight:bold;
@@ -315,50 +312,75 @@ font-size:20px;
 color:#c47a5a;
 margin-top:20px;
 }
-  /* MOBILE RESPONSIVE FIX */
-@media (max-width: 768px) {
+  /* NAVIGATION */
 
-  body {
-    padding: 10px;
-  }
+.navbar{
+background:#f8e6df;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:10px;
+position:sticky;
+top:0;
+z-index:1000;
+}
 
-  nav {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+.nav-links a{
+margin:10px 15px;
+text-decoration:none;
+font-family:"Comic Sans MS";
+font-weight:bold;
+color:#4b2e1f;
+}
 
-  nav a {
-    display: block;
-    margin: 6px 0;
-  }
+.hamburger{
+display:none;
+font-size:28px;
+cursor:pointer;
+position:absolute;
+right:20px;
+}
 
-  section {
-    padding: 20px 10px;
-  }
+/* MOBILE MENU */
 
-  img {
-    max-width: 100%;
-    height: auto;
-  }
+@media (max-width:768px){
 
-  .container {
-    width: 100%;
-  }
+.nav-links{
+display:none;
+flex-direction:column;
+width:100%;
+text-align:center;
+background:#f8e6df;
+}
 
-  form {
-    width: 100%;
-  }
+.nav-links a{
+display:block;
+padding:12px;
+border-top:1px solid #ddd;
+}
 
-  input, select, textarea, button {
-    width: 100%;
-    margin-bottom: 10px;
-  }
+.hamburger{
+display:block;
+}
 
 }
 
 </style>
 </head>
+<script>
+
+function toggleMenu(){
+var menu = document.getElementById("navLinks");
+
+if(menu.style.display === "flex"){
+menu.style.display = "none";
+}else{
+menu.style.display = "flex";
+}
+
+}
+
+</script>
 
 <body>
 
@@ -373,7 +395,7 @@ margin-top:20px;
 </div>
 
 <!-- SECTION 1 -->
-<div class="header-hero">
+<div class="header-hero" id="home">
 <div class="text-area">
 <h1>Little ABRM Bakes</h1>
 <p>Tiny Bites, Big Happiness ✨</p>
@@ -418,7 +440,7 @@ Little Abrm Bakes is a home-based bakery that offers fresh and delicious mini de
 </div>
 
 <!-- SECTION 4 -->
-<div class="menu-section">
+<div class="menu-section"id="menu">
 <div class="menu-grid">
 <div class="menu-item">
 <img src="https://i.ibb.co/XxQN2dsF/Brownie-with-Icecream.jpg">
