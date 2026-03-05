@@ -17,11 +17,11 @@ justify-content:center;
 gap:30px;
 padding:15px;
 z-index:1000;
-box-shadow:0 2px 10px rgba(0,0,0,0.1);
+font-family:"Comic Sans MS";
+box-shadow:0 2px 6px rgba(0,0,0,0.1);
 }
 .navbar a{
 text-decoration:none;
-font-family:"Comic Sans MS";
 color:#4b2e1f;
 font-size:18px;
 font-weight:bold;
@@ -124,7 +124,7 @@ font-family:"Baskerville Old Face";
 color:#4b2e1f;
 }
 
-/* MODERN PRICE LIST */
+/* PRICE LIST */
 .price-section{
 padding:60px 20px;
 text-align:center;
@@ -148,18 +148,14 @@ font-family:"Lucida Calligraphy";
 font-size:32px;
 margin-bottom:15px;
 color:#4b2e1f;
-text-shadow:2px 2px 5px rgba(0,0,0,0.3);
 }
 .price-item p{
-font-family:"Baskerville Old Face";
 font-size:24px;
 margin:6px 0;
 display:flex;
 justify-content:space-between;
 color:#4b2e1f;
 }
-.item-name{flex:1;text-align:left;}
-.item-price{text-align:right;flex:0;}
 
 /* ORDER FORM */
 .order-section{
@@ -188,21 +184,7 @@ font-size:18px;
 cursor:pointer;
 }
 
-/* WHATSAPP FLOAT */
-.whatsapp-float{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25D366;
-color:white;
-font-size:30px;
-padding:15px;
-border-radius:50%;
-text-decoration:none;
-box-shadow:0 4px 10px rgba(0,0,0,0.3);
-}
-
-/* SECTION 5 */
+/* VISION */
 .vision-section{
 background-image:url("https://i.ibb.co/93TTJrkT/cookies.jpg");
 background-size:cover;
@@ -231,12 +213,9 @@ color:#4b2e1f;
 .vision-overlay p{
 font-family:"Baskerville Old Face";
 font-size:28px;
-line-height:1.6;
-margin-bottom:40px;
-color:#4b2e1f;
 }
 
-/* SECTION 6 */
+/* CONTACT */
 .contact-section{
 display:flex;
 flex-wrap:wrap;
@@ -260,14 +239,9 @@ max-width:600px;
 font-family:"Baskerville Old Face";
 font-size:24px;
 font-weight:bold;
-color:black;
-padding-left:0;
-text-align:left;
 margin:0 auto;
 }
-.highlight{
-color:#c47a5a;
-}
+.highlight{color:#c47a5a;}
 
 .footer{
 text-align:center;
@@ -276,6 +250,29 @@ font-size:20px;
 color:#c47a5a;
 margin-top:20px;
 }
+
+/* WHATSAPP BUTTON */
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+font-size:30px;
+padding:15px 18px;
+border-radius:50%;
+text-decoration:none;
+box-shadow:0 4px 10px rgba(0,0,0,0.3);
+}
+
+/* RESPONSIVE */
+@media (max-width:768px){
+.header-hero{flex-direction:column;}
+.text-area,.image-area{width:100%;}
+.about-overlay{flex-direction:column;}
+.about-title,.about-text{width:100%;text-align:center;}
+.menu-item{width:90%;}
+}
 </style>
 </head>
 
@@ -283,6 +280,7 @@ margin-top:20px;
 
 <!-- NAVBAR -->
 <div class="navbar">
+<a href="#">Home</a>
 <a href="#about">About</a>
 <a href="#menu">Menu</a>
 <a href="#price">Prices</a>
@@ -306,7 +304,7 @@ margin-top:20px;
 <div class="about-overlay">
 <div class="about-title">About Us</div>
 <div class="about-text">
-Little Abrm Bakes is a home-based bakery that offers fresh and delicious mini desserts such as mini cakes, cupcakes, donuts, cookies, brownies, and custom sweet treats. Every item is handmade with love, using quality ingredients to bring happiness in every bite. Perfect for celebrations, gifts, and sweet cravings.
+Little Abrm Bakes is a home-based bakery that offers fresh and delicious mini desserts such as mini cakes, cupcakes, donuts, cookies, brownies, and custom sweet treats.
 </div>
 </div>
 </div>
@@ -315,17 +313,55 @@ Little Abrm Bakes is a home-based bakery that offers fresh and delicious mini de
 <div id="menu" class="menu-section">
 <div class="menu-title">Take a Bite!</div>
 
-<!-- your menu items unchanged -->
+<div class="menu-grid">
+<div class="menu-item">
+<img src="https://i.ibb.co/jkq1tBxS/Donuts.jpg">
+<h3>Donuts</h3>
+<p>Oreo Dark Chocolate, White Chocolate, Dark Chocolate, Red Velvet, Strawberry</p>
 </div>
 
-<!-- PRICE LIST -->
-<div id="price" class="price-section">
-<h2>Price List</h2>
+<div class="menu-item">
+<img src="https://i.ibb.co/HLLmKFSb/Red-Velvet-Cake.jpg">
+<h3>Mouthwatering Cakes</h3>
+<p>Chocolate, red velvet, vanilla & strawberry</p>
+</div>
+
+<div class="menu-item">
+<img src="https://i.ibb.co/QF85GHx1/Cookies-1.jpg">
+<h3>Cookies</h3>
+<p>Chocolate chip & peanut butter flavors</p>
+</div>
+</div>
+</div>
+
+<!-- SECTION 4 -->
+<div class="menu-section">
+<div class="menu-grid">
+
+<div class="menu-item">
+<img src="https://i.ibb.co/XxQN2dsF/Brownie-with-Icecream.jpg">
+<h3>Dessert</h3>
+<p>Cheesecake, Strawberry cheesecake & Brownie with ice-cream</p>
+</div>
+
+<div class="menu-item">
+<img src="https://i.ibb.co/s9rRX90M/Nutella-Tiramisu.jpg">
+<h3>Signature Dish</h3>
+<p>Tiramisu, Nutella tiramisu & Strawberry Tiramisu</p>
+</div>
+
+<div class="menu-item">
+<img src="https://i.ibb.co/0pdwHzHz/Pizza.jpg">
+<h3>Snacks</h3>
+<p>Pancakes, Chocolate Chip Waffles, Momo, Pizza, Sandwich</p>
+</div>
+
+</div>
 </div>
 
 <!-- ORDER -->
 <div id="order" class="order-section">
-<h2>Select Item</h2>
+<h2>Order Now</h2>
 
 <form id="orderForm">
 <input type="text" id="name" placeholder="Your Name" required><br>
@@ -333,11 +369,28 @@ Little Abrm Bakes is a home-based bakery that offers fresh and delicious mini de
 
 <select id="item">
 <option>Select Item</option>
-<option>Donuts</option>
-<option>Mini Cake</option>
-<option>Cookies</option>
-<option>Brownies</option>
+<option>White Chocolate Donut</option>
+<option>Dark Chocolate Donut</option>
+<option>Strawberry Donut</option>
+<option>Red Velvet Donut</option>
+<option>Oreo White Chocolate Donut</option>
+<option>Chocolate Cake</option>
+<option>Red Velvet Cake</option>
+<option>Vanilla Cake</option>
+<option>Strawberry Cake</option>
+<option>Chocolate Chip Cookies</option>
+<option>Peanut Butter Cookies</option>
+<option>Cheesecake</option>
+<option>Strawberry Cheesecake</option>
+<option>Brownie with Ice Cream</option>
 <option>Tiramisu</option>
+<option>Nutella Tiramisu</option>
+<option>Strawberry Tiramisu</option>
+<option>Pancakes</option>
+<option>Chocolate Chip Waffles</option>
+<option>Momo</option>
+<option>Pizza</option>
+<option>Sandwich</option>
 </select><br>
 
 <textarea id="details" placeholder="Your Order Details"></textarea><br>
@@ -365,24 +418,6 @@ window.open(url,"_blank");
 }
 </script>
 
-<!-- SECTION 5 -->
-<div class="vision-section">
-<div class="vision-overlay">
-
-<h2>Vision</h2>
-<p>Our vision is to become a trusted and loved mini bakery brand known for delicious small treats and beautiful presentation.</p>
-
-<h2>Brand Value</h2>
-<p>
-We believe:<br>
-Small things create big happiness...<br>
-Quality matters 😊<br>
-Homemade with love ❤️
-</p>
-
-</div>
-</div>
-
 <!-- CONTACT -->
 <div id="contact" class="contact-section">
 
@@ -392,11 +427,11 @@ We'd love to<br>hear from<br>you!
 
 <div class="contact-right">
 <span class="highlight">📍Location:</span> Butwal, Rupandehi, Nepal<br>
-<span class="highlight">📞Contact us:</span> 9768281253, 9745416869, 9811966295, 9821591982<br>
+<span class="highlight">📞Contact us:</span> 9768281253<br>
 <span class="highlight">✉️Email:</span> abrmbakes005@gmail.com<br>
 <span class="highlight">🕘Opens:</span> 9AM–9PM (except Saturday)<br>
 <span class="highlight">🍪 Follow for sweet updates:</span>
-<a href="https://www.instagram.com/littleabrmbakes?igsh=cTQwNGFxdWJvaTIz">Instagram</a>
+<a href="https://www.instagram.com/littleabrmbakes">Instagram</a>
 </div>
 
 </div>
@@ -406,8 +441,7 @@ We'd love to<br>hear from<br>you!
 #homemadewithlove #minitreats
 </div>
 
-<!-- WHATSAPP FLOAT -->
-<a class="whatsapp-float" href="https://wa.me/9779768281253" target="_blank">💬</a>
+<a class="whatsapp" href="https://wa.me/9779768281253">💬</a>
 
 </body>
 </html>
